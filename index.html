@@ -1,0 +1,143 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <title>自动轮播焦点图带文字标题简介</title>
+    <meta name="description" content="简单实用自动轮播焦点大图带文字标题简介js特效代码。">
+    <meta name="keywords" content="简单实用,自动轮播,焦点大图,带文字标题,简介,js特效代码">
+    <meta name="author" content="张运燕">
+    <meta name="Copyright" content="张运燕">
+    <link rel="stylesheet" href="public.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="m-slide clearfix" id="m-slide" >
+    <div class="last">
+        <a href="##">+</a>
+    </div>
+    <ul class="img">
+        <li>
+            <a href="#" target="_blank" class="clearfix">
+                <img class="imgLeft" src="image/after1.jpg">
+                <div class="imgRight">
+                    <p>
+                        <b>姓名</b><br/>
+                        <span>打造项目</span>
+                        丰胸
+                    </p>
+                    <img class="before" src="image/before1.jpg" alt="整形前">
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank" class="clearfix">
+                <img class="imgLeft" src="image/after1.jpg">
+                <div class="imgRight">
+                    <p>
+                        <b>张三</b><br/>
+                        <span>打造项目</span>
+                        丰胸
+                    </p>
+                    <img class="before" src="image/before1.jpg" alt="整形前">
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank" class="clearfix">
+                <img class="imgLeft" src="image/after1.jpg">
+                <div class="imgRight">
+                    <p>
+                        <b>姓名</b><br/>
+                        <span>打造项目</span>
+                        丰胸
+                    </p>
+                    <img class="before" src="image/before1.jpg" alt="整形前">
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank" class="clearfix">
+                <img class="imgLeft" src="image/after1.jpg">
+                <div class="imgRight">
+                    <p>
+                        <b>姓名</b><br/>
+                        <span>打造项目</span>
+                        丰胸
+                    </p>
+                    <img class="before" src="image/before1.jpg" alt="整形前">
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank" class="clearfix">
+                <img class="imgLeft" src="image/after1.jpg">
+                <div class="imgRight">
+                    <p>
+                        <b>姓名</b><br/>
+                        <span>打造项目</span>
+                        丰胸
+                    </p>
+                    <img class="before" src="image/before1.jpg" alt="整形前">
+                </div>
+            </a>
+        </li>
+
+    </ul>
+    <ul class="tab clearfix">
+        <li class="">
+            <a href="#">
+                <img src="image/one.jpg" alt="1">
+            </a>
+        </li>
+        <li class="">
+            <a href="#">
+                <img src="image/two.jpg" alt="2">
+            </a>
+        </li>
+        <li class="">
+            <a href="#">
+                <img src="image/three.jpg" alt="3">
+            </a>
+        </li>
+        <li class="">
+            <a href="#">
+                <img src="image/fore.jpg" alt="4">
+            </a>
+        </li>
+        <li class="">
+            <a href="#">
+                <img src="image/five.jpg" alt="5">
+            </a>
+        </li>
+
+    </ul>
+</div>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+<script type="text/javascript">
+    $("#m-slide .img>li").eq(0).show();
+    $("#m-slide .tab>li").eq(0).addClass("on");
+    function change(n) {
+        $("#m-slide .img>li").hide();
+        $("#m-slide .img>li").eq(n).show();
+        $("#m-slide .tab>li").removeClass("on");
+        $("#m-slide .tab>li").eq(n).addClass("on");
+        if (n >= 3) {
+            n = -1
+        }
+        n++;
+    }
+    $(function () {
+        $(".tab>li").each(function (index) {
+            $(".tab>li").eq(index).hover(function () {
+                $("#m-slide .tab>li").eq(index).addClass("on");
+                $("#m-slide .tab>li").eq(index).siblings().removeClass("on");
+                $("#m-slide .img>li").hide();
+                $("#m-slide .img>li").eq(index).show();
+            }, function () {
+                change(index);
+            })
+        })
+    })
+</script>
+</body>
+</html>
